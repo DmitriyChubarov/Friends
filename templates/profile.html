@@ -1,0 +1,39 @@
+<head>
+	<title>Profile</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<div>
+		<h1>Личный кабинет: {{ user.username  }}</h1>
+		<form action="{% url 'logout'  %}" method="post">
+			{% csrf_token %}
+			<button type="submit">Выйти</button>
+		</form>
+		<h2>Отправленные заявки в друзья:</h2>
+		{% for prop in sent_props  %}
+			{{ prop.in_id  }}<br>
+		{% endfor  %}
+		<h2>Входящие заявки в друзья:</h2>
+		{% for prop in received_props  %}
+			{{ prop.out_id  }}
+			<form method='POST' action="{% url 'accept_req' user_id=prop.out_id_id  %}">
+				{% csrf_token %}
+				<button type='submit'>add</button>
+			</form>
+
+			<form method='POST' action="{% url 'reject_req' user_id=prop.out_id_id  %}">
+				{% csrf_token %}
+				<button type='submit'>reject</button>
+			</form>
+		{% endfor  %}
+		<h2>Список друзей:</h2>
+		{% for friend in friends %}
+		{{ friend }}<br>
+			<form method='POST' action="{% url 'delete_friend' user_id=friend.id  %}">
+				{% csrf_token %}
+				<button type='submit'>delete</button>
+			</form>
+		{% endfor %}
+		<a href="{% url 'possible' %}">Список всех пользователей</a>
+	</div>
+</body>

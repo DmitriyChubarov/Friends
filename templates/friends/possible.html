@@ -1,0 +1,22 @@
+<head>
+	<title>Все пользователи</title>
+</head>
+<body>
+	<h3>Список всех пользователей сервиса</h3>
+	{% for user in users  %}
+		{{ user.username }}
+		{% if user.id in main_friends %}
+		- пользователь находится в списке ваших друзей<br><br>
+		{% elif user.id in out_props %}
+		- есть исходящая заявка<br><br>
+		{%  elif user.id in in_props%}
+		 - есть входящая заявка<br><br>
+		{% else %}
+			<form method='POST' action="{% url 'send_prop' user_id=user.id %}">
+				{% csrf_token  %}
+				<button type='submit'>add</button>
+			</form>
+		{% endif %}
+	{% endfor %}
+	<p><a href="{% url 'profile' %}">В личный кабинет</a></p>
+</body>

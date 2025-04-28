@@ -1,0 +1,13 @@
+
+<head>
+	<title>Test</title>
+</head>
+<body>
+	<form method='POST'>
+		{% csrf_token %}
+		<input type='text' name='name' required placeholder='Введите имя'>
+		<input type='password' name='password' required placeholder='Введите пароль'>
+		<button>Войти</button>
+	</form>
+	<h3><a href ='{% url 'register' %}'>Регистрация нового пользователя</a></h3>
+</body>
