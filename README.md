@@ -20,7 +20,7 @@
 
 ### Установка на MacOS/Linux
 
-Открываем терминал, создаём папку, в которой будет располагаться проект и переходим в неё:<br><br>`mkdir /ваш/путь`<br>cd /ваш/путь<br><br>Клонируем репозотирий в эту папку:<br><br>`git clone /путь`<br><br>Скачиваем менеджер версий python - pyenv, скачиваем python версии 3.9.18. При необходимости переходим в папку проекта, после чего создаём новое виртуальное окружение с указанной версией python. Устанавливаем в него нужную версию django и адаптера postgresql:<br><br>`brew install pyenv`<br>`pyenv install 3.9.18`<br>`cd /ваш/путь`<br>`pipenv --python 3.9.18`<br>`pipenv install django==2.2.5`<br>`pip install psycopg2-binary=2.8.6`<br><br>Запускаем виртуальное окружение и сервис:<br><br>pipenv shell<br>`python manage.py runserver`
+Открываем терминал, создаём папку, в которой будет располагаться проект и переходим в неё:<br><br>`mkdir /ваш/путь`<br>`cd /ваш/путь`<br><br>Клонируем репозотирий в эту папку:<br><br>`git clone /путь`<br><br>Скачиваем менеджер версий python - pyenv, скачиваем python версии 3.9.18. При необходимости переходим в папку проекта, после чего создаём новое виртуальное окружение с указанной версией python. Устанавливаем в него нужную версию django и адаптера postgresql:<br><br>`brew install pyenv`<br>`pyenv install 3.9.18`<br>`cd /ваш/путь`<br>`pipenv --python 3.9.18`<br>`pipenv install django==2.2.5`<br>`pip install psycopg2-binary=2.8.6`<br><br>Запускаем виртуальное окружение и сервис:<br><br>pipenv shell<br>`python manage.py runserver`
 
 ### Контакты
 - tg: @eeezz_z
