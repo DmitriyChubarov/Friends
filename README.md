@@ -16,12 +16,30 @@
 
 ### Подготовка БД перед запуском
 
-Создаём БД и пользователя для работы сервиса, выдаём новому пользователю права на БД:<br><br>`psql postgres`<br>`CREATE DATABASE vk;`<br>`CREATE USER vk WITH PASSWORD 'vk';`<br>`GRANT ALL PRIVILEGES ON DATABASE vk to vk;`<br>`\q`
+Создаём БД и пользователя для работы сервиса, выдаём новому пользователю права на БД:
+```bash
+psql postgres
+```
+```sql
+CREATE DATABASE vk;
+CREATE USER vk WITH PASSWORD 'vk';
+GRANT ALL PRIVILEGES ON DATABASE vk to vk;
+\q
+```
 
 ### Установка на MacOS/Linux
 
-Открываем терминал, создаём папку, в которой будет располагаться проект и переходим в неё:<br><br>`mkdir /ваш/путь`<br>`cd /ваш/путь`<br><br>Клонируем репозотирий в эту папку:<br><br>`git clone https://github.com/DmitriyChubarov/Friends.git`<br><br>Скачиваем менеджер версий python - pyenv, скачиваем python версии 3.9.18. 
-При необходимости переходим в папку проекта, после чего создаём новое виртуальное окружение с указанной версией python. Устанавливаем в него нужную версию django и адаптера postgresql:<br><br>
+Открываем терминал, создаём папку, в которой будет располагаться проект и переходим в неё:
+```bash
+mkdir /ваш/путь
+cd /ваш/путь
+```
+Клонируем репозотирий в эту папку:<br><br>
+```bash 
+git clone https://github.com/DmitriyChubarov/Friends.git
+```
+Скачиваем менеджер версий python - pyenv, скачиваем python версии 3.9.18. 
+При необходимости переходим в папку проекта, после чего создаём новое виртуальное окружение с указанной версией python. Устанавливаем в него нужную версию django и адаптера postgresql:
 ```bash
 brew install pyenv
 pyenv install 3.9.18
@@ -29,8 +47,14 @@ cd Friends/
 pipenv --python 3.9.18
 pipenv install django==2.2.5
 ```
-Запускаем виртуальное окружение и окончательно настраиваем проект. Запускаем сервис:<br><br>`pipenv shell`<br>`pip install psycopg2-binary==2.8.6`<br>`python manage.py makemigrations`<br>`python manage.py migrate`<br>`python manage.py runserver`
-
+Запускаем виртуальное окружение и окончательно настраиваем проект. Запускаем сервис:
+```bash
+pipenv shell
+pip install psycopg2-binary==2.8.6
+python manage.py makemigrations
+python manage.py migrate
+python manage.py runserver`
+```
 ### Контакты
 - tg: @eeezz_z
 - gh: https://github.com/DmitriyChubarov
