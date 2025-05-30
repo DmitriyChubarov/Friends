@@ -34,7 +34,7 @@ GRANT ALL PRIVILEGES ON DATABASE vk to vk;
 mkdir /ваш/путь
 cd /ваш/путь
 ```
-Клонируем репозотирий в эту папку:<br><br>
+Клонируем репозотирий в эту папку:
 ```bash 
 git clone https://github.com/DmitriyChubarov/Friends.git
 ```
@@ -53,7 +53,7 @@ pipenv shell
 pip install psycopg2-binary==2.8.6
 python manage.py makemigrations
 python manage.py migrate
-python manage.py runserver`
+python manage.py runserver
 ```
 ### Контакты
 - tg: @eeezz_z
